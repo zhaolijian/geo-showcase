@@ -1,0 +1,455 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='3316' height='2069' viewBox='0 0 3316 2069'>
+<defs>
+<marker id='arw-slate' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7.5' markerHeight='7.5' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#94a3b8'/></marker><marker id='arw-green' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7.5' markerHeight='7.5' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#059669'/></marker><marker id='arw-amber' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7.5' markerHeight='7.5' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#d97706'/></marker><marker id='arw-red' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7.5' markerHeight='7.5' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#dc2626'/></marker><marker id='arw-gray' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7.5' markerHeight='7.5' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#8a94a3'/></marker>
+<linearGradient id='tab1' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#1d4ed8'/><stop offset='1' stop-color='#1e3a8a'/></linearGradient>
+<linearGradient id='tab2' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#6d28d9'/><stop offset='1' stop-color='#4c1d95'/></linearGradient>
+<linearGradient id='tab3' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#0f766e'/><stop offset='1' stop-color='#134e4a'/></linearGradient>
+</defs>
+<rect x='0.0' y='0.0' width='3316.0' height='2069.3' rx='0' fill='#ffffff' stroke='none' stroke-width='1'/>
+<g>
+<text x='64.0' y='102.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='30' fill='#0f172a' font-weight='600' text-anchor='start'>文章预检与生成 Agent · 最终流程与交互图</text>
+<text x='64.0' y='134.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='14.2' fill='#5b6673' text-anchor='start'>依据 2026-11-09 最终实现绘制（已移除手动选资料入口）· 未部署 · 未发布 · 图中数值为任务预算/上限</text>
+<text x='3252.0' y='98.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' text-anchor='end'>源引 GEO · 文章 Agent</text>
+<text x='3252.0' y='118.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#8a94a3' text-anchor='end'>图 v1 · 2026-11-09 · 依据最终实现</text>
+<rect x='64.0' y='156.0' width='270.5' height='26.0' rx='13' fill='#eff5ff' stroke='none' stroke-width='1'/>
+<text x='77.0' y='173.4' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.2' fill='#1d4ed8' font-weight='600' text-anchor='start'>唯一资料入口：全库混合检索 + 预检模型选片</text>
+<rect x='346.5' y='156.0' width='247.7' height='26.0' rx='13' fill='#f5f2ff' stroke='none' stroke-width='1'/>
+<text x='359.5' y='173.4' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.2' fill='#6d28d9' font-weight='600' text-anchor='start'>单次生成模型预算 ≤8 次（共享硬上限）</text>
+<rect x='606.2' y='156.0' width='306.6' height='26.0' rx='13' fill='#fffbeb' stroke='none' stroke-width='1'/>
+<text x='619.2' y='173.4' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.2' fill='#b45309' font-weight='600' text-anchor='start'>任务与快照在进程内：单实例，重启丢失进行中任务</text>
+<rect x='924.8' y='156.0' width='253.8' height='26.0' rx='13' fill='#effaf7' stroke='none' stroke-width='1'/>
+<text x='937.8' y='173.4' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.2' fill='#0f766e' font-weight='600' text-anchor='start'>质量 completed ≠ 内容验收；同步不发布</text>
+</g>
+<rect x='248.0' y='248.0' width='3024.0' height='402.3' rx='20' fill='#eff5ff' stroke='none' stroke-width='1' opacity='0.85'/>
+<rect x='64.0' y='266.0' width='178.0' height='366.3' rx='16' fill='url(#tab1)' stroke='none' stroke-width='1'/>
+<text x='86.0' y='402.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='30' fill='#ffffff' font-weight='600' text-anchor='start'>①</text>
+<text x='86.0' y='446.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='18' fill='#ffffff' font-weight='600' text-anchor='start'>选题预检</text>
+<text x='86.0' y='484.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='10.2' fill='#ffffff' opacity='0.82' text-anchor='start'>发起预检任务</text>
+<text x='86.0' y='498.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#ffffff' font-weight='600' opacity='0.92' text-anchor='start'>墙钟 ≤240s</text>
+<text x='86.0' y='517.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#ffffff' font-weight='600' opacity='0.92' text-anchor='start'>模型预算 2 次</text>
+<text x='86.0' y='536.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#ffffff' font-weight='600' opacity='0.92' text-anchor='start'>显示阶段 3 个</text>
+<path d='M752.0,301.0 L752.0,310.0 L2096.0,310.0 L2096.0,301.0' fill='none' stroke='#1d4ed8' stroke-width='1.6' opacity='0.55' stroke-linejoin='round' stroke-linecap='round'/>
+<text x='1424.0' y='284.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.4' fill='#1d4ed8' font-weight='600' text-anchor='middle'>预检后台任务（墙钟 ≤240s，模型预算 2 次）</text>
+<text x='1424.0' y='300.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#5b6673' text-anchor='middle'>工作台每 5s 轮询任务状态（上限 250s）→ 阶段：检查输入 → 准备资料 → 检查写作条件</text>
+<rect x='268.0' y='324.0' width='296.0' height='166.1' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='269.2' y='338.0' width='4.5' height='138.1' rx='2.2' fill='#d97706' stroke='none' stroke-width='1'/>
+<rect x='286.0' y='337.0' width='36.4' height='20.0' rx='6' fill='#fef3c7' stroke='none' stroke-width='1'/>
+<text x='304.2' y='351.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#92400e' font-weight='600' text-anchor='middle'>用户</text>
+<text x='546.0' y='352.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>01</text>
+<text x='286.0' y='381.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>填写选题条件</text>
+<text x='286.0' y='408.7' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>标题、内容类型、篇幅（简/标/深）、结构样</text>
+<text x='286.0' y='427.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>式、补充信息；品牌名称/主营/行业/地区取自</text>
+<text x='286.0' y='445.9' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>品牌档案</text>
+<line x1='286.0' y1='458.3' x2='546.0' y2='458.3' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='286.0' y='473.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>页面：创作页；已有稿编辑页</text>
+<rect x='604.0' y='324.0' width='296.0' height='166.1' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='605.2' y='338.0' width='4.5' height='138.1' rx='2.2' fill='#0284c7' stroke='none' stroke-width='1'/>
+<rect x='622.0' y='337.0' width='47.6' height='20.0' rx='6' fill='#e0f2fe' stroke='none' stroke-width='1'/>
+<text x='645.8' y='351.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#075985' font-weight='600' text-anchor='middle'>工作台</text>
+<text x='882.0' y='352.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>02</text>
+<text x='622.0' y='381.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>发起选题预检</text>
+<text x='622.0' y='408.7' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>发起预检任务返回 202 + </text>
+<text x='622.0' y='427.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>任务 ID；同指纹的进行中任务直接复用（202），</text>
+<text x='622.0' y='445.9' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>已有其他预检任务返回 409</text>
+<line x1='622.0' y1='458.3' x2='882.0' y2='458.3' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='622.0' y='473.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>每 5s 轮询 · 轮询上限 250s</text>
+<rect x='940.0' y='324.0' width='296.0' height='166.1' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='941.2' y='338.0' width='4.5' height='138.1' rx='2.2' fill='#6366f1' stroke='none' stroke-width='1'/>
+<rect x='958.0' y='337.0' width='47.6' height='20.0' rx='6' fill='#e0e7ff' stroke='none' stroke-width='1'/>
+<text x='981.8' y='351.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#3730a3' font-weight='600' text-anchor='middle'>服务端</text>
+<text x='1218.0' y='352.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>03</text>
+<text x='958.0' y='381.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>校验输入 · 读目录</text>
+<text x='958.0' y='408.7' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>参数 / 结构样式 / 品牌资料校验；读取资料目</text>
+<text x='958.0' y='427.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>录（资料元信息 + 索引元信息），记录</text>
+<text x='958.0' y='445.9' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>资料目录版本用于快照校验</text>
+<line x1='958.0' y1='458.3' x2='1218.0' y2='458.3' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='958.0' y='473.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>目录读取 ≤15s · 任务墙钟 240s</text>
+<rect x='1276.0' y='324.0' width='296.0' height='166.1' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='1277.2' y='338.0' width='4.5' height='138.1' rx='2.2' fill='#0d9488' stroke='none' stroke-width='1'/>
+<rect x='1294.0' y='337.0' width='63.7' height='20.0' rx='6' fill='#ccfbf1' stroke='none' stroke-width='1'/>
+<text x='1325.9' y='351.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#115e59' font-weight='600' text-anchor='middle'>数据/图库</text>
+<text x='1554.0' y='352.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>04</text>
+<text x='1294.0' y='381.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>全库混合检索（RRF）</text>
+<text x='1294.0' y='408.7' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>关键词与向量索引（1024 </text>
+<text x='1294.0' y='427.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>维）在同一条 SQL 内融合；每条通道召回 60，</text>
+<text x='1294.0' y='445.9' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>RRF 取前 ≤60 片候选</text>
+<line x1='1294.0' y1='458.3' x2='1554.0' y2='458.3' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='1294.0' y='473.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>检索 ≤45s · 候选 60 · 无手动选资料入口</text>
+<rect x='1612.0' y='324.0' width='296.0' height='166.1' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='1613.2' y='338.0' width='4.5' height='138.1' rx='2.2' fill='#9333ea' stroke='none' stroke-width='1'/>
+<rect x='1630.0' y='337.0' width='36.4' height='20.0' rx='6' fill='#f3e8ff' stroke='none' stroke-width='1'/>
+<text x='1648.2' y='351.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#6b21a8' font-weight='600' text-anchor='middle'>模型</text>
+<text x='1890.0' y='352.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>05</text>
+<text x='1630.0' y='381.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>检查写作条件 + 选片</text>
+<text x='1630.0' y='408.7' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>预检模型返回选中片段 ID ≤8（只能</text>
+<text x='1630.0' y='427.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>取候选 ID）+ 摘要 + 改题建议 + 补充资料提示；</text>
+<text x='1630.0' y='445.9' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>temperature 0</text>
+<line x1='1630.0' y1='458.3' x2='1890.0' y2='458.3' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='1630.0' y='473.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>45s/次 · 格式无效 ≤2 次 · 输出上限 2400</text>
+<rect x='1948.0' y='324.0' width='296.0' height='166.1' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='1949.2' y='338.0' width='4.5' height='138.1' rx='2.2' fill='#6366f1' stroke='none' stroke-width='1'/>
+<rect x='1966.0' y='337.0' width='47.6' height='20.0' rx='6' fill='#e0e7ff' stroke='none' stroke-width='1'/>
+<text x='1989.8' y='351.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#3730a3' font-weight='600' text-anchor='middle'>服务端</text>
+<text x='2226.0' y='352.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>06</text>
+<text x='1966.0' y='381.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>校验资料 · 写快照</text>
+<text x='1966.0' y='408.7' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>按篇幅预算的 75% 裁剪最终 sources（brief </text>
+<text x='1966.0' y='427.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>3000 / standard 6000 / deep 9000 字符）；</text>
+<text x='1966.0' y='445.9' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>确认资料未变化后写准备快照</text>
+<line x1='1966.0' y1='458.3' x2='2226.0' y2='458.3' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='1966.0' y='473.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>快照校验 ≤15s · 快照 30 分钟、按用户隔离</text>
+<rect x='2284.0' y='324.0' width='296.0' height='166.1' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='2285.2' y='338.0' width='4.5' height='138.1' rx='2.2' fill='#0284c7' stroke='none' stroke-width='1'/>
+<rect x='2302.0' y='337.0' width='47.6' height='20.0' rx='6' fill='#e0f2fe' stroke='none' stroke-width='1'/>
+<text x='2325.8' y='351.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#075985' font-weight='600' text-anchor='middle'>工作台</text>
+<text x='2562.0' y='352.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>07</text>
+<text x='2302.0' y='381.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>展示预检结果</text>
+<text x='2302.0' y='408.7' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>展示摘要 / 改题建议 / 补充资料提示，可采纳</text>
+<text x='2302.0' y='427.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>或忽略；输入条件变化后摘要标「条件已变化」，</text>
+<text x='2302.0' y='445.9' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>该快照不再复用</text>
+<line x1='2302.0' y1='458.3' x2='2562.0' y2='458.3' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='2302.0' y='473.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>轮询上限 250s（240s + 10s 最终读取）</text>
+<line x1='569.0' y1='407.1' x2='599.0' y2='407.1' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<line x1='905.0' y1='407.1' x2='935.0' y2='407.1' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<line x1='1241.0' y1='407.1' x2='1271.0' y2='407.1' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<line x1='1577.0' y1='407.1' x2='1607.0' y2='407.1' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<line x1='1913.0' y1='407.1' x2='1943.0' y2='407.1' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<line x1='2249.0' y1='407.1' x2='2279.0' y2='407.1' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<path d='M1760.0,492.1 L1760.0,516.1 L1760.0,516.1 L1760.0,524.1' fill='none' stroke='#dc2626' stroke-width='1.5' stroke-dasharray='5 5' marker-end='url(#arw-red)' stroke-linejoin='round' stroke-linecap='round'/>
+<rect x='1621.0' y='528.1' width='278.0' height='76.2' rx='11' fill='#fef2f2' stroke='#dc2626' stroke-width='1.2' stroke-dasharray='5 4'/>
+<text x='1634.0' y='547.1' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#b91c1c' font-weight='600' text-anchor='start'>格式异常失败</text>
+<text x='1634.0' y='565.1' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>两次格式无效 → 任务失败「选题预检返回内容异</text>
+<text x='1634.0' y='580.7' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>常，请重试」；服务错误不隐式重试</text>
+<path d='M2432.0,492.1 L2432.0,516.1 L2432.0,516.1 L2432.0,524.1' fill='none' stroke='#d97706' stroke-width='1.5' stroke-dasharray='5 5' marker-end='url(#arw-amber)' stroke-linejoin='round' stroke-linecap='round'/>
+<rect x='2293.0' y='528.1' width='278.0' height='76.2' rx='11' fill='#fffbeb' stroke='#d97706' stroke-width='1.2' stroke-dasharray='5 4'/>
+<text x='2306.0' y='547.1' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#b45309' font-weight='600' text-anchor='start'>条件已变化</text>
+<text x='2306.0' y='565.1' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>标题/篇幅/样式/补充信息/品牌资料变化 → 预检结</text>
+<text x='2306.0' y='580.7' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>果标记失效，准备快照不再复用</text>
+<rect x='2614.0' y='324.0' width='632.0' height='166.1' rx='14' fill='#ffffff' stroke='#cbd5e1' stroke-width='1.1' stroke-dasharray='6 4'/>
+<text x='2632.0' y='379.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.8' fill='#334155' font-weight='600' text-anchor='start'>准备快照复用的边界</text>
+<text x='2632.0' y='403.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 任一输入条件或资料目录指纹变化、超过 30 分钟、服务重启、进程内缓存被挤出 → 重新准备</text>
+<text x='2632.0' y='427.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 重新准备 = 重新检索 + 再调用 1 次预检模型（生成链路计入共享的 8 次预算）</text>
+<text x='2632.0' y='450.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 预检结果为空（sources=[]）同样写入快照并被复用：生成不会自动重搜，需重跑预检或改条件</text>
+<rect x='248.0' y='718.3' width='3024.0' height='420.9' rx='20' fill='#f5f2ff' stroke='none' stroke-width='1' opacity='0.85'/>
+<rect x='64.0' y='736.3' width='178.0' height='384.9' rx='16' fill='url(#tab2)' stroke='none' stroke-width='1'/>
+<text x='86.0' y='882.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='30' fill='#ffffff' font-weight='600' text-anchor='start'>②</text>
+<text x='86.0' y='926.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='18' fill='#ffffff' font-weight='600' text-anchor='start'>生成文章</text>
+<text x='86.0' y='964.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='10.2' fill='#ffffff' opacity='0.82' text-anchor='start'>发起生成任务</text>
+<text x='86.0' y='978.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#ffffff' font-weight='600' opacity='0.92' text-anchor='start'>墙钟 ≤390s</text>
+<text x='86.0' y='997.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#ffffff' font-weight='600' opacity='0.92' text-anchor='start'>模型预算 8 次（共享）</text>
+<text x='86.0' y='1016.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#ffffff' font-weight='600' opacity='0.92' text-anchor='start'>显示阶段 6 个</text>
+<path d='M752.0,771.3 L752.0,780.3 L2768.0,780.3 L2768.0,771.3' fill='none' stroke='#6d28d9' stroke-width='1.6' opacity='0.55' stroke-linejoin='round' stroke-linecap='round'/>
+<text x='1760.0' y='754.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.4' fill='#6d28d9' font-weight='600' text-anchor='middle'>生成后台任务（墙钟 ≤390s，模型预算 8 次共享；显示阶段 6 个：准备资料 → 规划 → 生成 → 优化 → 配图 → 保存）</text>
+<text x='1760.0' y='770.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#5b6673' text-anchor='middle'>工作台每 5s 轮询任务状态（上限 400s）；超时/取消/预算耗尽 → 按预算降级，旧稿不被覆盖</text>
+<rect x='268.0' y='794.3' width='296.0' height='184.7' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='269.2' y='808.3' width='4.5' height='156.7' rx='2.2' fill='#d97706' stroke='none' stroke-width='1'/>
+<rect x='286.0' y='807.3' width='36.4' height='20.0' rx='6' fill='#fef3c7' stroke='none' stroke-width='1'/>
+<text x='304.2' y='821.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#92400e' font-weight='600' text-anchor='middle'>用户</text>
+<text x='546.0' y='822.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>01</text>
+<text x='286.0' y='851.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>点击「生成文章」</text>
+<text x='286.0' y='879.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>有可复用预检快照时携带准备快照 ID；</text>
+<text x='286.0' y='897.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>发起生成任务 → 202 + 任务 ID；同</text>
+<text x='286.0' y='916.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>一用户只允许一个生成任务，冲突 409；旧稿</text>
+<text x='286.0' y='934.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>重新生成需先确认</text>
+<line x1='286.0' y1='947.2' x2='546.0' y2='947.2' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='286.0' y='962.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>每 5s 轮询 · 上限 400s</text>
+<rect x='604.0' y='794.3' width='296.0' height='184.7' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='605.2' y='808.3' width='4.5' height='156.7' rx='2.2' fill='#6366f1' stroke='none' stroke-width='1'/>
+<rect x='622.0' y='807.3' width='47.6' height='20.0' rx='6' fill='#e0e7ff' stroke='none' stroke-width='1'/>
+<text x='645.8' y='821.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#3730a3' font-weight='600' text-anchor='middle'>服务端</text>
+<text x='882.0' y='822.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>02</text>
+<text x='622.0' y='851.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>准备写作资料</text>
+<text x='622.0' y='879.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>快照条件与指纹匹配则复用（不再检索、不再</text>
+<text x='622.0' y='897.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>调预检模型）；否则现场混合检索 + 预检；追</text>
+<text x='622.0' y='916.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>加用户补充信息与品牌资料</text>
+<line x1='622.0' y1='947.2' x2='882.0' y2='947.2' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='622.0' y='962.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>材料执行上限 240s（检索 45s）</text>
+<rect x='940.0' y='794.3' width='296.0' height='184.7' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='941.2' y='808.3' width='4.5' height='156.7' rx='2.2' fill='#9333ea' stroke='none' stroke-width='1'/>
+<rect x='958.0' y='807.3' width='36.4' height='20.0' rx='6' fill='#f3e8ff' stroke='none' stroke-width='1'/>
+<text x='976.2' y='821.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#6b21a8' font-weight='600' text-anchor='middle'>模型</text>
+<text x='1218.0' y='822.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>03</text>
+<text x='958.0' y='851.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>规划文章（planning）</text>
+<text x='958.0' y='879.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>输出意图 / 对象类型 / 读者决定 / 区块形式（</text>
+<text x='958.0' y='897.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>段落·列表·步骤·表格）/ 候选与统一维度，</text>
+<text x='958.0' y='916.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>并说明选择理由</text>
+<line x1='958.0' y1='947.2' x2='1218.0' y2='947.2' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='958.0' y='962.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>45s · temp 0 · JSON · 输出上限 3200</text>
+<rect x='1276.0' y='794.3' width='296.0' height='184.7' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='1277.2' y='808.3' width='4.5' height='156.7' rx='2.2' fill='#9333ea' stroke='none' stroke-width='1'/>
+<rect x='1294.0' y='807.3' width='36.4' height='20.0' rx='6' fill='#f3e8ff' stroke='none' stroke-width='1'/>
+<text x='1312.2' y='821.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#6b21a8' font-weight='600' text-anchor='middle'>模型</text>
+<text x='1554.0' y='822.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>04</text>
+<text x='1294.0' y='851.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>生成正文（generation）</text>
+<text x='1294.0' y='879.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>写作建议为软引导，不强制排版；计划契约只</text>
+<text x='1294.0' y='897.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>对硬问题（对象类型 / 本品牌口径 / 正文品牌</text>
+<text x='1294.0' y='916.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>出现）重写一次</text>
+<line x1='1294.0' y1='947.2' x2='1554.0' y2='947.2' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='1294.0' y='962.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>120s/次 · thinking 开 · ≤2 次</text>
+<rect x='1612.0' y='794.3' width='296.0' height='184.7' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='1613.2' y='808.3' width='4.5' height='156.7' rx='2.2' fill='#6366f1' stroke='none' stroke-width='1'/>
+<rect x='1630.0' y='807.3' width='47.6' height='20.0' rx='6' fill='#e0e7ff' stroke='none' stroke-width='1'/>
+<text x='1653.8' y='821.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#3730a3' font-weight='600' text-anchor='middle'>服务端</text>
+<text x='1890.0' y='822.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>05</text>
+<text x='1630.0' y='851.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>草稿检查点</text>
+<text x='1630.0' y='879.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>正文生成后立即回传 checkpoint；任务超时、</text>
+<text x='1630.0' y='897.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>取消或预算耗尽时，新稿可用它兜底保存，旧</text>
+<text x='1630.0' y='916.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>稿不覆盖</text>
+<line x1='1630.0' y1='947.2' x2='1890.0' y2='947.2' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='1630.0' y='962.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>不调用模型 · 仅新稿兜底</text>
+<rect x='1948.0' y='794.3' width='296.0' height='184.7' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='1949.2' y='808.3' width='4.5' height='156.7' rx='2.2' fill='#9333ea' stroke='none' stroke-width='1'/>
+<rect x='1966.0' y='807.3' width='36.4' height='20.0' rx='6' fill='#f3e8ff' stroke='none' stroke-width='1'/>
+<text x='1984.2' y='821.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#6b21a8' font-weight='600' text-anchor='middle'>模型</text>
+<text x='2226.0' y='822.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>06</text>
+<text x='1966.0' y='851.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>质量复查（单次编辑式）</text>
+<text x='1966.0' y='879.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>返回问题 + 真实段落锚点 + 原句 + 可选替换（</text>
+<text x='1966.0' y='897.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>响应格式无效重试 1 次）；仅当核心答案依赖</text>
+<text x='1966.0' y='916.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>缺失私有资料时，库内补查 + 修复复查</text>
+<line x1='1966.0' y1='947.2' x2='2226.0' y2='947.2' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='1966.0' y='962.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>60s · 输出上限 6500 · 质量阶段合计 ≤4 次</text>
+<rect x='2284.0' y='794.3' width='296.0' height='184.7' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='2285.2' y='808.3' width='4.5' height='156.7' rx='2.2' fill='#6366f1' stroke='none' stroke-width='1'/>
+<rect x='2302.0' y='807.3' width='47.6' height='20.0' rx='6' fill='#e0e7ff' stroke='none' stroke-width='1'/>
+<text x='2325.8' y='821.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#3730a3' font-weight='600' text-anchor='middle'>服务端</text>
+<text x='2562.0' y='822.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>07</text>
+<text x='2302.0' y='851.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>应用补丁</text>
+<text x='2302.0' y='879.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>确定性应用 ≤4 处、累计 ≤30%；锚点唯一命</text>
+<text x='2302.0' y='897.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>中、不重叠、不改标题/署名/图片/链接；结论 </text>
+<text x='2302.0' y='916.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>completed / needs_attention / failed</text>
+<line x1='2302.0' y1='947.2' x2='2562.0' y2='947.2' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='2302.0' y='962.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>不重写整篇 · 校验失败整批回退</text>
+<rect x='2620.0' y='794.3' width='296.0' height='184.7' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='2621.2' y='808.3' width='4.5' height='156.7' rx='2.2' fill='#0d9488' stroke='none' stroke-width='1'/>
+<rect x='2638.0' y='807.3' width='63.7' height='20.0' rx='6' fill='#ccfbf1' stroke='none' stroke-width='1'/>
+<text x='2669.9' y='821.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#115e59' font-weight='600' text-anchor='middle'>数据/图库</text>
+<text x='2898.0' y='822.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>08</text>
+<text x='2638.0' y='851.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>选择配图</text>
+<text x='2638.0' y='879.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>图库检索（只用说明完整的图）→ 选图（仅 </text>
+<text x='2638.0' y='897.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>direct 才插入）→ 图片健康检查 → 相关性复</text>
+<text x='2638.0' y='916.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>核；无合适图则跳过</text>
+<line x1='2638.0' y1='947.2' x2='2898.0' y2='947.2' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='2638.0' y='962.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>选图 30s + 图核 30s · brief 1 张 / 其他 2 张</text>
+<rect x='2956.0' y='794.3' width='296.0' height='184.7' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='2957.2' y='808.3' width='4.5' height='156.7' rx='2.2' fill='#6366f1' stroke='none' stroke-width='1'/>
+<rect x='2974.0' y='807.3' width='47.6' height='20.0' rx='6' fill='#e0e7ff' stroke='none' stroke-width='1'/>
+<text x='2997.8' y='821.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#3730a3' font-weight='600' text-anchor='middle'>服务端</text>
+<text x='3234.0' y='822.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>09</text>
+<text x='2974.0' y='851.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>保存草稿 · 返回结果</text>
+<text x='2974.0' y='879.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>无旧稿：按幂等键保存；有</text>
+<text x='2974.0' y='897.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>旧稿：返回文章 ID + 版本号，</text>
+<text x='2974.0' y='916.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>由前端按乐观锁写回</text>
+<line x1='2974.0' y1='931.4' x2='3234.0' y2='931.4' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='2974.0' y='946.4' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>保存失败 → 草稿保留可重试 · 结果含质量报告 +</text>
+<text x='2974.0' y='962.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'> 运行轨迹</text>
+<line x1='569.0' y1='886.6' x2='599.0' y2='886.6' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<line x1='905.0' y1='886.6' x2='935.0' y2='886.6' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<line x1='1241.0' y1='886.6' x2='1271.0' y2='886.6' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<line x1='1577.0' y1='886.6' x2='1607.0' y2='886.6' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<line x1='1913.0' y1='886.6' x2='1943.0' y2='886.6' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<line x1='2249.0' y1='886.6' x2='2279.0' y2='886.6' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<line x1='2585.0' y1='886.6' x2='2615.0' y2='886.6' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<line x1='2921.0' y1='886.6' x2='2951.0' y2='886.6' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<path d='M752.0,981.0 L752.0,1005.0 L752.0,1005.0 L752.0,1013.0' fill='none' stroke='#dc2626' stroke-width='1.5' stroke-dasharray='5 5' marker-end='url(#arw-red)' stroke-linejoin='round' stroke-linecap='round'/>
+<rect x='613.0' y='1017.0' width='278.0' height='76.2' rx='11' fill='#fef2f2' stroke='#dc2626' stroke-width='1.2' stroke-dasharray='5 4'/>
+<text x='626.0' y='1036.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#b91c1c' font-weight='600' text-anchor='start'>资料准备失败</text>
+<text x='626.0' y='1054.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>任务失败并返回可读错误；不写库、不产生半成品</text>
+<text x='626.0' y='1069.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>稿件</text>
+<path d='M1088.0,981.0 L1088.0,1005.0 L1088.0,1005.0 L1088.0,1013.0' fill='none' stroke='#d97706' stroke-width='1.5' stroke-dasharray='5 5' marker-end='url(#arw-amber)' stroke-linejoin='round' stroke-linecap='round'/>
+<rect x='949.0' y='1017.0' width='278.0' height='76.2' rx='11' fill='#fffbeb' stroke='#d97706' stroke-width='1.2' stroke-dasharray='5 4'/>
+<text x='962.0' y='1036.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#b45309' font-weight='600' text-anchor='start'>规划失败</text>
+<text x='962.0' y='1054.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>受控重试 1 次（+1 次预算）；两次失败 → 无规划，</text>
+<text x='962.0' y='1069.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>按默认格式规则写作</text>
+<path d='M1424.0,981.0 L1424.0,1005.0 L1424.0,1005.0 L1424.0,1013.0' fill='none' stroke='#d97706' stroke-width='1.5' stroke-dasharray='5 5' marker-end='url(#arw-amber)' stroke-linejoin='round' stroke-linecap='round'/>
+<rect x='1285.0' y='1017.0' width='278.0' height='76.2' rx='11' fill='#fffbeb' stroke='#d97706' stroke-width='1.2' stroke-dasharray='5 4'/>
+<text x='1298.0' y='1036.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#b45309' font-weight='600' text-anchor='start'>硬问题重写未通过</text>
+<text x='1298.0' y='1054.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>重写后仍不符或重写请求失败 → 保留首版并记录</text>
+<text x='1298.0' y='1069.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>问题，不阻断后续</text>
+<path d='M2432.0,981.0 L2432.0,1005.0 L2432.0,1005.0 L2432.0,1013.0' fill='none' stroke='#dc2626' stroke-width='1.5' stroke-dasharray='5 5' marker-end='url(#arw-red)' stroke-linejoin='round' stroke-linecap='round'/>
+<rect x='2293.0' y='1017.0' width='278.0' height='76.2' rx='11' fill='#fef2f2' stroke='#dc2626' stroke-width='1.2' stroke-dasharray='5 4'/>
+<text x='2306.0' y='1036.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#b91c1c' font-weight='600' text-anchor='start'>补丁校验失败</text>
+<text x='2306.0' y='1054.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>整批回退、保留原稿、质量状态 failed，不留半</text>
+<text x='2306.0' y='1069.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>改状态</text>
+<path d='M2768.0,981.0 L2768.0,1005.0 L2768.0,1005.0 L2768.0,1013.0' fill='none' stroke='#d97706' stroke-width='1.5' stroke-dasharray='5 5' marker-end='url(#arw-amber)' stroke-linejoin='round' stroke-linecap='round'/>
+<rect x='2629.0' y='1017.0' width='278.0' height='76.2' rx='11' fill='#fffbeb' stroke='#d97706' stroke-width='1.2' stroke-dasharray='5 4'/>
+<text x='2642.0' y='1036.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#b45309' font-weight='600' text-anchor='start'>预算不足跳过配图</text>
+<text x='2642.0' y='1054.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>正文与质量阶段已用超过 4 次调用 → 直接跳过配</text>
+<text x='2642.0' y='1069.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>图，保留文字稿</text>
+<path d='M3104.0,981.0 L3104.0,1005.0 L3104.0,1005.0 L3104.0,1013.0' fill='none' stroke='#d97706' stroke-width='1.5' stroke-dasharray='5 5' marker-end='url(#arw-amber)' stroke-linejoin='round' stroke-linecap='round'/>
+<rect x='2965.0' y='1017.0' width='278.0' height='76.2' rx='11' fill='#fffbeb' stroke='#d97706' stroke-width='1.2' stroke-dasharray='5 4'/>
+<text x='2978.0' y='1036.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#b45309' font-weight='600' text-anchor='start'>超时 / 取消 / 预算耗尽</text>
+<text x='2978.0' y='1054.0' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>新稿：草稿兜底保存并标质量 failed；旧稿：不</text>
+<text x='2978.0' y='1069.6' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>覆盖，提示「旧稿未改动，可重试」</text>
+<rect x='248.0' y='1207.2' width='3024.0' height='258.1' rx='20' fill='#effaf7' stroke='none' stroke-width='1' opacity='0.85'/>
+<rect x='64.0' y='1225.2' width='178.0' height='222.1' rx='16' fill='url(#tab3)' stroke='none' stroke-width='1'/>
+<text x='86.0' y='1299.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='30' fill='#ffffff' font-weight='600' text-anchor='start'>③</text>
+<text x='86.0' y='1343.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='18' fill='#ffffff' font-weight='600' text-anchor='start'>编辑与同步</text>
+<text x='86.0' y='1381.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='10.2' fill='#ffffff' opacity='0.82' text-anchor='start'>生成后（人工阶段）</text>
+<text x='86.0' y='1395.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#ffffff' font-weight='600' opacity='0.92' text-anchor='start'>不在后台任务内</text>
+<text x='86.0' y='1414.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#ffffff' font-weight='600' opacity='0.92' text-anchor='start'>人工操作 + 门禁检查</text>
+<rect x='268.0' y='1251.2' width='296.0' height='166.1' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='269.2' y='1265.2' width='4.5' height='138.1' rx='2.2' fill='#0284c7' stroke='none' stroke-width='1'/>
+<rect x='286.0' y='1264.2' width='47.6' height='20.0' rx='6' fill='#e0f2fe' stroke='none' stroke-width='1'/>
+<text x='309.8' y='1278.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#075985' font-weight='600' text-anchor='middle'>工作台</text>
+<text x='546.0' y='1279.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>01</text>
+<text x='286.0' y='1308.7' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>进入编辑态</text>
+<text x='286.0' y='1335.9' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>生成完成后进入编辑：Markdown 正文可编辑、</text>
+<text x='286.0' y='1354.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>实时预览；标题与补充信息可改，改动触发自</text>
+<text x='286.0' y='1373.1' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>动保存</text>
+<line x1='286.0' y1='1385.5' x2='546.0' y2='1385.5' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='286.0' y='1400.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>质量报告只读展示 · needs_attention 会提示</text>
+<rect x='604.0' y='1251.2' width='296.0' height='166.1' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='605.2' y='1265.2' width='4.5' height='138.1' rx='2.2' fill='#0284c7' stroke='none' stroke-width='1'/>
+<rect x='622.0' y='1264.2' width='47.6' height='20.0' rx='6' fill='#e0f2fe' stroke='none' stroke-width='1'/>
+<text x='645.8' y='1278.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#075985' font-weight='600' text-anchor='middle'>工作台</text>
+<text x='882.0' y='1279.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>02</text>
+<text x='622.0' y='1308.7' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>自动保存（2.5s 防抖）</text>
+<text x='622.0' y='1335.9' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>停止输入 2.5s 后自动保存草稿；</text>
+<text x='622.0' y='1354.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>以更新时间做乐观锁，版本不一致返回 409、</text>
+<text x='622.0' y='1373.1' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>不覆盖对方修改</text>
+<line x1='622.0' y1='1385.5' x2='882.0' y2='1385.5' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='622.0' y='1400.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>保存失败显示提示，可重试</text>
+<rect x='940.0' y='1251.2' width='296.0' height='166.1' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='941.2' y='1265.2' width='4.5' height='138.1' rx='2.2' fill='#d97706' stroke='none' stroke-width='1'/>
+<rect x='958.0' y='1264.2' width='36.4' height='20.0' rx='6' fill='#fef3c7' stroke='none' stroke-width='1'/>
+<text x='976.2' y='1278.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#92400e' font-weight='600' text-anchor='middle'>用户</text>
+<text x='1218.0' y='1279.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>03</text>
+<text x='958.0' y='1308.7' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>修改与重新生成</text>
+<text x='958.0' y='1335.9' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>可改标题（重算标题一致性）、手动插图、重</text>
+<text x='958.0' y='1354.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>新生成；重新生成需确认，成功后按 </text>
+<text x='958.0' y='1373.1' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>文章 ID + 版本号 覆盖</text>
+<line x1='958.0' y1='1385.5' x2='1218.0' y2='1385.5' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='958.0' y='1400.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>输入变化 → 预检结果失效，可重跑预检</text>
+<rect x='1276.0' y='1251.2' width='296.0' height='166.1' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='1277.2' y='1265.2' width='4.5' height='138.1' rx='2.2' fill='#6366f1' stroke='none' stroke-width='1'/>
+<rect x='1294.0' y='1264.2' width='47.6' height='20.0' rx='6' fill='#e0e7ff' stroke='none' stroke-width='1'/>
+<text x='1317.8' y='1278.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#3730a3' font-weight='600' text-anchor='middle'>服务端</text>
+<text x='1554.0' y='1279.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>04</text>
+<text x='1294.0' y='1308.7' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>同步前门禁</text>
+<text x='1294.0' y='1335.9' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>标题/正文非空、保存完成、稿件版本一致、浏</text>
+<text x='1294.0' y='1354.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>览器与同步扩展可用、正文图片可读（去重 ≤</text>
+<text x='1294.0' y='1373.1' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>20 张）；质量报告缺失不阻断</text>
+<line x1='1294.0' y1='1385.5' x2='1554.0' y2='1385.5' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='1294.0' y='1400.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>不满足 → 同步按钮给出具体原因</text>
+<rect x='1612.0' y='1251.2' width='296.0' height='166.1' rx='14' fill='#ffffff' stroke='#dbe1ea' stroke-width='1.3'/>
+<rect x='1613.2' y='1265.2' width='4.5' height='138.1' rx='2.2' fill='#64748b' stroke='none' stroke-width='1'/>
+<rect x='1630.0' y='1264.2' width='81.2' height='20.0' rx='6' fill='#e2e8f0' stroke='none' stroke-width='1'/>
+<text x='1670.6' y='1278.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#334155' font-weight='600' text-anchor='middle'>浏览器·平台</text>
+<text x='1890.0' y='1279.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.6' fill='#8a94a3' font-weight='600' text-anchor='end'>05</text>
+<text x='1630.0' y='1308.7' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.2' fill='#1e293b' font-weight='600' text-anchor='start'>同步到自媒体平台</text>
+<text x='1630.0' y='1335.9' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>通过 浏览器扩展把正文送到已登录并勾</text>
+<text x='1630.0' y='1354.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>选的平台，系统记录同步结果；不做发布</text>
+<text x='1630.0' y='1373.1' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.7' fill='#3d4756' text-anchor='start'>动作</text>
+<line x1='1630.0' y1='1385.5' x2='1890.0' y2='1385.5' stroke='#dbe1ea' stroke-width='1' stroke-linecap='round'/>
+<text x='1630.0' y='1400.5' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.1' fill='#5b6673' font-weight='600' text-anchor='start'>不发布 · 由用户在平台侧自行发布</text>
+<line x1='569.0' y1='1334.2' x2='599.0' y2='1334.2' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<line x1='905.0' y1='1334.2' x2='935.0' y2='1334.2' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<line x1='1241.0' y1='1334.2' x2='1271.0' y2='1334.2' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<line x1='1577.0' y1='1334.2' x2='1607.0' y2='1334.2' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<rect x='1942.0' y='1251.2' width='1304.0' height='166.1' rx='14' fill='#ffffff' stroke='#cbd5e1' stroke-width='1.1' stroke-dasharray='6 4'/>
+<text x='1960.0' y='1295.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='12.8' fill='#334155' font-weight='600' text-anchor='start'>状态语义：四者不要混淆</text>
+<text x='1960.0' y='1319.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#475569' font-weight='600' text-anchor='start'>任务状态</text>
+<text x='2014.4' y='1319.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>pending / success / error — 只由后台任务决定；兜底保存的草稿也随任务结果返回。</text>
+<text x='1960.0' y='1342.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#475569' font-weight='600' text-anchor='start'>质量状态</text>
+<text x='2014.4' y='1342.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>completed / needs_attention / failed — 只来自自动复查与补丁应用，不代表内容验收。</text>
+<text x='1960.0' y='1366.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#475569' font-weight='600' text-anchor='start'>保存状态</text>
+<text x='2014.4' y='1366.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>保存失败 / 草稿保留 — 只表示稿件是否持久化，保存失败可重试。</text>
+<text x='1960.0' y='1389.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#475569' font-weight='600' text-anchor='start'>同步状态</text>
+<text x='2014.4' y='1389.8' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>未同步 / 已记录同步结果 — 同步 ≠ 发布，发布仍由用户在平台侧完成。</text>
+<path d='M2096.0,490.1 L2096.0,684.3 L678.0,684.3 L678.0,790.3' fill='none' stroke='#059669' stroke-width='2.1' stroke-dasharray='7 6' marker-end='url(#arw-green)' stroke-linejoin='round' stroke-linecap='round'/>
+<rect x='1241.8' y='659.3' width='290.5' height='46.0' rx='10' fill='#ffffff' stroke='#34d399' stroke-width='1.2'/>
+<text x='1387.0' y='677.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.8' fill='#047857' font-weight='600' text-anchor='middle'>预检准备快照（30 分钟、按用户隔离）</text>
+<text x='1387.0' y='694.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#4b5563' text-anchor='middle'>条件与指纹匹配 → 复用：不再检索、不再调预检模型</text>
+<path d='M3256.0,886.6 L3274.0,886.6 L3274.0,1173.2 L416.0,1173.2 L416.0,1247.2' fill='none' stroke='#94a3b8' stroke-width='1.8' stroke-dasharray='6 6' marker-end='url(#arw-gray)' stroke-linejoin='round' stroke-linecap='round'/>
+<rect x='1676.6' y='1148.2' width='336.7' height='46.0' rx='10' fill='#ffffff' stroke='#cbd5e1' stroke-width='1.2'/>
+<text x='1845.0' y='1166.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.8' fill='#475569' font-weight='600' text-anchor='middle'>保存成功 → 进入编辑页</text>
+<text x='1845.0' y='1183.2' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#5b6673' text-anchor='middle'>文章 + 质量报告 + 运行轨迹；人工编辑、保存与同步都在前台完成</text>
+<rect x='64.0' y='1505.3' width='3188.0' height='500.0' rx='18' fill='#f6f7f9' stroke='#e3e7ed' stroke-width='1.2'/>
+<line x1='984.0' y1='1527.3' x2='984.0' y2='1983.3' stroke='#e3e7ed' stroke-width='1' stroke-linecap='round'/>
+<line x1='1984.0' y1='1527.3' x2='1984.0' y2='1983.3' stroke='#e3e7ed' stroke-width='1' stroke-linecap='round'/>
+<text x='90.0' y='1539.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.4' fill='#0f172a' font-weight='600' text-anchor='start'>图例与阅读说明</text>
+<text x='90.0' y='1567.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.8' fill='#5b6673' text-anchor='start'>卡片：左上角 = 执行方 · 右上角 = 顺序 · 底部 = 时限/预算等约束</text>
+<text x='90.0' y='1591.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.8' fill='#5b6673' text-anchor='start'>琥珀色卡片 = 用户在页面上的操作或确认点；其余为系统自动步骤。</text>
+<text x='90.0' y='1617.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#8a94a3' font-weight='600' text-anchor='start'>执行方</text>
+<rect x='142.0' y='1602.3' width='38.4' height='20.0' rx='6' fill='#fef3c7' stroke='none' stroke-width='1'/>
+<text x='161.2' y='1616.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#92400e' font-weight='600' text-anchor='middle'>用户</text>
+<rect x='188.4' y='1602.3' width='49.6' height='20.0' rx='6' fill='#e0f2fe' stroke='none' stroke-width='1'/>
+<text x='213.2' y='1616.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#075985' font-weight='600' text-anchor='middle'>工作台</text>
+<rect x='246.0' y='1602.3' width='49.6' height='20.0' rx='6' fill='#e0e7ff' stroke='none' stroke-width='1'/>
+<text x='270.8' y='1616.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#3730a3' font-weight='600' text-anchor='middle'>服务端</text>
+<rect x='303.6' y='1602.3' width='38.4' height='20.0' rx='6' fill='#f3e8ff' stroke='none' stroke-width='1'/>
+<text x='322.8' y='1616.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#6b21a8' font-weight='600' text-anchor='middle'>模型</text>
+<rect x='350.0' y='1602.3' width='65.7' height='20.0' rx='6' fill='#ccfbf1' stroke='none' stroke-width='1'/>
+<text x='382.9' y='1616.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#115e59' font-weight='600' text-anchor='middle'>数据/图库</text>
+<rect x='423.7' y='1602.3' width='83.2' height='20.0' rx='6' fill='#e2e8f0' stroke='none' stroke-width='1'/>
+<text x='465.3' y='1616.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#334155' font-weight='600' text-anchor='middle'>浏览器·平台</text>
+<line x1='90.0' y1='1647.3' x2='132.0' y2='1647.3' stroke='#a9b3c0' stroke-width='2' marker-end='url(#arw-slate)' stroke-linecap='round'/>
+<text x='144.0' y='1651.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#4b5563' text-anchor='start'>主流程（步骤先后）</text>
+<line x1='90.0' y1='1668.3' x2='132.0' y2='1668.3' stroke='#059669' stroke-width='2' stroke-dasharray='7 6' marker-end='url(#arw-green)' stroke-linecap='round'/>
+<text x='144.0' y='1672.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#4b5563' text-anchor='start'>准备快照复用</text>
+<line x1='90.0' y1='1689.3' x2='132.0' y2='1689.3' stroke='#94a3b8' stroke-width='2' stroke-dasharray='6 6' marker-end='url(#arw-gray)' stroke-linecap='round'/>
+<text x='144.0' y='1693.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#4b5563' text-anchor='start'>阶段交接</text>
+<line x1='90.0' y1='1710.3' x2='132.0' y2='1710.3' stroke='#dc2626' stroke-width='2' stroke-dasharray='5 4' marker-end='url(#arw-red)' stroke-linecap='round'/>
+<text x='144.0' y='1714.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#4b5563' text-anchor='start'>失败分支</text>
+<line x1='90.0' y1='1731.3' x2='132.0' y2='1731.3' stroke='#d97706' stroke-width='2' stroke-dasharray='5 4' marker-end='url(#arw-amber)' stroke-linecap='round'/>
+<text x='144.0' y='1735.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#4b5563' text-anchor='start'>降级分支</text>
+<text x='90.0' y='1758.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#8a94a3' font-weight='600' text-anchor='start'>工作台显示阶段</text>
+<text x='90.0' y='1778.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#5b6673' text-anchor='start'>预检 3 阶段：检查输入 → 准备资料 → 检查写作条件</text>
+<text x='90.0' y='1797.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#5b6673' text-anchor='start'>生成 6 阶段：准备写作资料 → 规划文章 → 生成文章 → 优化文章 → 选择配图 → 保存草稿</text>
+<text x='90.0' y='1825.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.6' fill='#8a94a3' font-weight='600' text-anchor='start'>读图前先知道</text>
+<text x='90.0' y='1845.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 手动选资料入口已于 2026-11-09 移除；资料只由全库检索 + 预检选片产生。</text>
+<text x='90.0' y='1864.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 预检结果在生成时可复用（30 分钟快照）；预检本身每次重新准备。</text>
+<text x='90.0' y='1883.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 质量 completed 只表示本轮自动复查未发现需修改项，不是内容验收或发布门禁。</text>
+<text x='1030.0' y='1539.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.4' fill='#0f172a' font-weight='600' text-anchor='start'>模型调用与预算（单次生成共享硬上限 8 次）</text>
+<text x='1030.0' y='1567.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='10.8' fill='#8a94a3' font-weight='600' text-anchor='start'>阶段</text>
+<text x='1330.0' y='1567.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='10.8' fill='#8a94a3' font-weight='600' text-anchor='start'>上限</text>
+<text x='1450.0' y='1567.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='10.8' fill='#8a94a3' font-weight='600' text-anchor='start'>说明</text>
+<line x1='1030.0' y1='1575.3' x2='1980.0' y2='1575.3' stroke='#e3e7ed' stroke-width='1' stroke-linecap='round'/>
+<text x='1030.0' y='1603.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#1e293b' font-weight='600' text-anchor='start'>预检 preflight</text>
+<text x='1330.0' y='1603.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>≤2</text>
+<text x='1450.0' y='1603.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>独立预算；格式无效重试计入 2 次</text>
+<text x='1030.0' y='1631.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#1e293b' font-weight='600' text-anchor='start'>规划 planning</text>
+<text x='1330.0' y='1631.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>≤2</text>
+<text x='1450.0' y='1631.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>首次失败受控重试 1 次</text>
+<text x='1030.0' y='1659.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#1e293b' font-weight='600' text-anchor='start'>生成 generation</text>
+<text x='1330.0' y='1659.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>≤2</text>
+<text x='1450.0' y='1659.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>首版 + 硬约束重写 1 次</text>
+<text x='1030.0' y='1687.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#1e293b' font-weight='600' text-anchor='start'>质量复查</text>
+<text x='1330.0' y='1687.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>1（含格式重试）</text>
+<text x='1450.0' y='1687.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>质量阶段合计 ≤4 次调用</text>
+<text x='1030.0' y='1715.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#1e293b' font-weight='600' text-anchor='start'>兜底修订</text>
+<text x='1330.0' y='1715.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>≤1</text>
+<text x='1450.0' y='1715.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>仅核心答案依赖缺失私有资料时</text>
+<text x='1030.0' y='1743.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#1e293b' font-weight='600' text-anchor='start'>选图</text>
+<text x='1330.0' y='1743.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>1</text>
+<text x='1450.0' y='1743.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>30s · 输出上限 1800</text>
+<text x='1030.0' y='1771.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#1e293b' font-weight='600' text-anchor='start'>图核</text>
+<text x='1330.0' y='1771.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>1</text>
+<text x='1450.0' y='1771.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>30s · 输出上限 1000</text>
+<text x='1030.0' y='1799.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#1e293b' font-weight='600' text-anchor='start'>共享硬上限</text>
+<text x='1330.0' y='1799.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#4b5563' text-anchor='start'>8</text>
+<text x='1450.0' y='1799.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>共享调用预算 8 次：超限拒绝后续调用并降级，保留已生成内容</text>
+<line x1='1030.0' y1='1813.3' x2='1980.0' y2='1813.3' stroke='#e3e7ed' stroke-width='1' stroke-linecap='round'/>
+<text x='1030.0' y='1839.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#5b6673' text-anchor='start'>实际调用按发生顺序共用 8 个名额：预检快照被复用时通常为 规划 1 + 生成 1 + 复查 1；</text>
+<text x='1030.0' y='1856.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.2' fill='#5b6673' text-anchor='start'>准备资料未复用时先占 1 次预检调用；极端组合会把图核/配图挤掉，正文与质量结果保留。</text>
+<text x='2030.0' y='1539.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='15.4' fill='#0f172a' font-weight='600' text-anchor='start'>时间：任务墙钟 vs 单步上限</text>
+<text x='2030.0' y='1567.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#475569' font-weight='600' text-anchor='start'>任务墙钟（端到端上限，到点中止并触发兜底）</text>
+<text x='2040.0' y='1587.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 预检任务 240s；工作台轮询上限 250s（240s + 10s 最终读取）</text>
+<text x='2040.0' y='1606.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 生成任务 390s；工作台轮询上限 400s（390s + 10s 最终读取）</text>
+<text x='2040.0' y='1625.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 轮询间隔 5s；超时/取消时仅新稿用草稿兜底，旧稿保持不动</text>
+<text x='2030.0' y='1652.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#475569' font-weight='600' text-anchor='start'>单步上限（与墙钟独立生效，谁先到谁中止）</text>
+<text x='2040.0' y='1672.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 资料目录 15s · 混合检索 45s · 预检模型 45s/次 · 快照校验 15s</text>
+<text x='2040.0' y='1691.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 规划 45s · 生成 120s · 质量复查 60s · 选图 30s · 图核 30s</text>
+<text x='2040.0' y='1710.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 材料执行总上限 240s（预检与生成共用）</text>
+<text x='2030.0' y='1737.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#475569' font-weight='600' text-anchor='start'>其它时限与边界</text>
+<text x='2040.0' y='1757.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 准备快照 30 分钟有效（最多 100 条，按用户隔离）；自动保存防抖 2.5s</text>
+<text x='2040.0' y='1776.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 任务状态 / 准备快照 / 草稿检查点在进程内：单实例，重启丢进行中任务</text>
+<text x='2040.0' y='1795.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 未部署、未发布；不写生产数据；质量 completed 只代表本轮自动复查未发现需修改项</text>
+<text x='2030.0' y='1828.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#475569' font-weight='600' text-anchor='start'>本轮定稿的关键变化（2026-11-09）</text>
+<text x='2040.0' y='1848.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 资料只来自全库混合检索 + 预检模型选片；候选 ≤60 片、最终 ≤8 片，按篇幅预算裁剪。</text>
+<text x='2040.0' y='1867.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 「仅用所选」或「必引资料」若将来需要，属于显式新模式，需另行设计，不在当前实现内。</text>
+<text x='2030.0' y='1900.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#475569' font-weight='600' text-anchor='start'>验收口径提示</text>
+<text x='2040.0' y='1920.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 完成 / 失败状态只来自服务端任务；界面进度条是展示映射，不代表额外处理。</text>
+<text x='2040.0' y='1939.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='11.4' fill='#5b6673' text-anchor='start'>· 真实内容与页面验收需在最终代码上独立重跑，不能用完成任务或格式通过替代。</text>
+<text x='3252.0' y='2045.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='10.6' fill='#8a94a3' text-anchor='end'>源引 GEO · 文章 Agent · 2026-11-09 · 未部署</text>
+<text x='64.0' y='2045.3' font-family="'PingFang SC','Hiragino Sans GB','Heiti SC','Noto Sans SC',sans-serif" font-size='10.6' fill='#8a94a3' text-anchor='start'>说明：浅色阶段带 = 一个阶段；带内从左到右阅读。虚线框为该步骤已知的异常或降级路径。</text>
+</svg>
